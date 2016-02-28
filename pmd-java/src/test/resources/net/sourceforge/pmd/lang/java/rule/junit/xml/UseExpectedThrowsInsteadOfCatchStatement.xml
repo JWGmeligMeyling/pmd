@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+    <test-code>
+        <description><![CDATA[
+		JUnit Test uses the ExpectedException rule
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+         public class SimpleExpectedExceptionTest {
+             @Rule
+             public ExpectedException thrown = ExpectedException.none();
+
+             @Test
+             public void throwsExceptionWithSpecificType() {
+                 thrown.expect(NullPointerException.class);
+                 throw new NullPointerException();
+             }
+         }
+     ]]></code>
+    </test-code>
+    <test-code>
+        <description><![CDATA[
+		JUnit Test verifies exception is thrown using a catch statement
+     ]]></description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+		public class MyTestClass {
+            @Test
+            public void badTestCase() {
+                try {
+                    MayThrow.execute();
+                }
+                catch (Exception e) {
+                    return;
+                }
+                fail();
+            }
+		}
+     ]]></code>
+    </test-code>
+</test-data>

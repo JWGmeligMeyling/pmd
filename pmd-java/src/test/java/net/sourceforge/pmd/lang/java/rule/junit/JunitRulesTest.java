@@ -23,5 +23,6 @@ public class JunitRulesTest extends SimpleAggregatorTst {
         addRule(RULESET, "UseAssertNullInsteadOfAssertTrue");
         addRule(RULESET, "UseAssertSameInsteadOfAssertTrue");
         addRule(RULESET, "UseAssertTrueInsteadOfAssertEquals");
+        addRule(RULESET, "UseExpectedThrowsInsteadOfCatchStatement");
     }
 }
